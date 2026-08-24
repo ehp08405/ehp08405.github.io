@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>北海道大学病院 地域連携NEWSLETTER 2026年9月号</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════════
+   北海道大学病院 地域連携NEWSLETTER
+   判型：仕上がりA4 210×297mm ＋ 塗り足し3mm ＝ 216×303mm
+         （ラクスル PDF入稿仕様。トンボ不要）／ 全6ページ
+   色  ：病院ロゴから実測した色のみ。墨・緑・紙・罫の4色。
+   書体：見出し Zen Kaku Gothic New／本文 Noto Sans JP／
+         ラベル Roboto Mono（欧文のみ）
+   ══════════════════════════════════════════════════════════ */
+:root{
+  --ink:#231815;      /* ロゴのスミ */
+  --sub:#6E6B68;
+  --faint:#9A9793;
+  --green:#007E2D;    /* 北大病院グリーン（ロゴ実測） */
+  --rule:#D6D8D2;
+  --tint:#F1F2EE;
+  --paper:#FFFFFF;
+
+  --disp:"Zen Kaku Gothic New","Noto Sans JP","Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;
+  --body:"Noto Sans JP","Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;
+  --mono:"Roboto Mono","SFMono-Regular",monospace;
+
+  --mx:21mm;   /* 塗り足し3mm ＋ 版面マージン18mm */
+  --mt:18mm;
+  --mb:20mm;
+  --cw:174mm;  /* 版面幅 */
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+@page{ size:216mm 303mm; margin:0; }
+
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+body{
+  font-family:var(--body);font-weight:400;color:var(--ink);
+  background:#8B8E87;
+  font-feature-settings:"palt" 1;
+  line-break:strict;
+  text-align:justify;text-justify:inter-character;
+}
+.sheet{
+  position:relative;width:216mm;height:303mm;
+  background:var(--paper);margin:16mm auto;overflow:hidden;
+  box-shadow:0 6px 40px rgba(0,0,0,.28);
+  padding:var(--mt) var(--mx) var(--mb);
+  display:flex;flex-direction:column;
+}
+
+/* ─────────── 共通パーツ ─────────── */
+.hr{height:.28mm;background:var(--ink);width:100%;}
+.eyebrow{font-family:var(--mono);font-size:7.5pt;font-weight:500;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--green);white-space:nowrap;}
+.jlabel{font-family:var(--disp);font-weight:700;font-size:8.5pt;
+  letter-spacing:.16em;color:var(--green);white-space:nowrap;}
+.p-head{display:flex;align-items:baseline;gap:5mm;}
+.p-head .line{flex:1;height:.2mm;background:var(--rule);}
+
+h2.sec{font-family:var(--disp);font-weight:900;font-size:20pt;
+  letter-spacing:.01em;line-height:1.35;text-align:left;}
+h3.sub{font-family:var(--disp);font-weight:700;font-size:11pt;
+  letter-spacing:.04em;line-height:1.5;text-align:left;}
+h3.sub .en{font-family:var(--mono);font-size:6.8pt;font-weight:400;
+  letter-spacing:.18em;color:var(--faint);margin-left:3mm;text-transform:uppercase;}
+
+p.body{font-size:9.3pt;font-weight:400;line-height:1.95;letter-spacing:.015em;}
+p.lead{font-size:10.5pt;font-weight:300;line-height:2.0;letter-spacing:.02em;}
+.cap{font-size:7.2pt;font-weight:400;line-height:1.6;color:var(--sub);
+  letter-spacing:.02em;text-align:left;}
+.reg{font-size:.62em;vertical-align:.42em;letter-spacing:0;}
+.measure{max-width:112mm;}
+
+.foot{margin-top:auto;padding-top:4mm;display:flex;align-items:baseline;
+  justify-content:space-between;font-family:var(--mono);font-size:6.8pt;
+  letter-spacing:.14em;color:var(--faint);border-top:.2mm solid var(--rule);}
+.foot .rt{font-family:var(--body);letter-spacing:.1em;font-size:6.6pt;}
+
+/* 顔写真は角版（誌面で円を使うのは関節鏡視野の図版1点だけ） */
+.md img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;}
+.md .nm{margin-top:3mm;font-family:var(--disp);font-weight:700;
+  font-size:11.5pt;letter-spacing:.05em;text-align:left;line-height:1.3;}
+.md .ro{margin-top:1.2mm;font-size:7.6pt;font-weight:300;
+  color:var(--sub);letter-spacing:.04em;text-align:left;line-height:1.5;}
+.md .sp{margin-top:.8mm;font-size:7pt;font-weight:400;
+  color:var(--green);letter-spacing:.03em;text-align:left;line-height:1.4;}
+
+/* ─────────── P1 表紙 ─────────── */
+.cov-top{display:flex;align-items:flex-end;justify-content:space-between;}
+.cov-top img{height:14mm;width:auto;}
+.cov-date{text-align:right;line-height:1.5;}
+.cov-date .y{font-family:var(--mono);font-size:11pt;font-weight:500;
+  letter-spacing:.1em;color:var(--ink);}
+.cov-date .j{font-size:7.2pt;color:var(--sub);letter-spacing:.08em;}
+
+/* マストヘッド：NEWSLETTERロゴ（北大病院・地域医療連携福祉センター名入り） */
+.masthead-logo{width:166mm;height:auto;display:block;margin:2mm auto 0;}
+
+/* 表紙の主役：治療の先にある日常。左右と下を裁ち落とす */
+.cov-photo{position:absolute;left:0;right:0;bottom:0;height:135mm;}
+.cov-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.cov-credit{position:absolute;right:var(--mx);bottom:6mm;
+  font-size:6.6pt;letter-spacing:.06em;color:#FFFFFF;
+  text-shadow:0 0 2mm rgba(0,0,0,.55);}
+
+.cov-text{margin-top:-8mm;}
+.cov-tag{display:inline-block;border-top:.6mm solid var(--green);
+  padding-top:1.6mm;margin-bottom:3.5mm;}
+h1.cov-title{font-family:var(--disp);font-weight:900;font-size:20pt;
+  line-height:1.5;letter-spacing:.005em;text-align:left;}
+.cov-sub{margin-top:1mm;font-size:9.4pt;font-weight:300;line-height:1.9;
+  color:var(--sub);text-align:left;max-width:132mm;}
+
+/* 目次：本文ページと同じp-head＋緑罫のカードで組む */
+.toc{margin-top:5mm;}
+.toc-grid{margin-top:3mm;display:grid;grid-template-columns:repeat(5,1fr);gap:4mm;}
+.toc-grid .ti{border-top:.55mm solid var(--green);padding-top:2.5mm;}
+.toc-grid .ti .no{font-family:var(--mono);font-weight:700;font-size:13pt;
+  color:var(--green);letter-spacing:.02em;}
+.toc-grid .ti .tt{margin-top:1.5mm;font-family:var(--disp);font-weight:700;
+  font-size:7.4pt;line-height:1.4;letter-spacing:.02em;text-align:left;}
+
+/* ─────────── P2 ─────────── */
+.feat4{display:grid;grid-template-columns:repeat(4,1fr);gap:5mm;margin-top:10mm;}
+.feat4 .it{border-top:.55mm solid var(--green);padding-top:3mm;}
+.feat4 .big{font-family:var(--disp);font-weight:900;font-size:12.5pt;
+  line-height:1.45;letter-spacing:.01em;text-align:left;}
+.feat4 .sml{margin-top:2mm;font-size:8pt;font-weight:300;line-height:1.7;
+  color:var(--sub);text-align:left;}
+
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm;margin-top:6mm;}
+.strip img{width:100%;display:block;}
+.strip .n{font-family:var(--mono);font-size:7.5pt;font-weight:500;
+  letter-spacing:.18em;color:var(--green);margin-bottom:2mm;}
+.strip h4{margin-top:2.5mm;font-family:var(--disp);font-weight:700;
+  font-size:9.5pt;letter-spacing:.03em;text-align:left;}
+.strip p{margin-top:1.2mm;font-size:7.6pt;font-weight:300;line-height:1.65;
+  color:var(--sub);text-align:left;}
+.strip.cg img{background:#000;}
+
+/* ─────────── P3 ─────────── */
+.result{display:flex;gap:9mm;margin-top:7mm;align-items:flex-start;}
+.result .fig{width:52mm;flex:none;}
+.result .fig img{width:52mm;height:52mm;display:block;}
+.result .fig .cap{margin-top:3mm;}
+
+.facts{margin-top:8mm;display:grid;grid-template-columns:1fr 1fr;gap:8mm;}
+.facts.n3{grid-template-columns:repeat(3,1fr);gap:7mm;margin-top:6mm;}
+.facts .f{border-top:.55mm solid var(--ink);padding-top:3.5mm;}
+.facts .f .k{font-family:var(--mono);font-size:6.8pt;letter-spacing:.16em;color:var(--faint);}
+.facts .f .v{margin-top:2.5mm;font-family:var(--disp);font-weight:900;
+  font-size:24pt;letter-spacing:.02em;color:var(--green);line-height:1.25;}
+.facts.n3 .f .v{font-size:21pt;}
+.facts .f .v .u{font-size:.46em;font-weight:700;letter-spacing:.04em;margin-left:1mm;}
+.facts .f .d{margin-top:2.5mm;font-size:8.4pt;font-weight:300;
+  line-height:1.7;color:var(--sub);text-align:left;}
+.facts.n3 .f .d{font-size:7.6pt;letter-spacing:-.01em;}
+
+.refer{margin-top:8mm;background:var(--tint);padding:6mm 8mm 7mm;
+  border-top:1.1mm solid var(--green);}
+.refer h3{font-family:var(--disp);font-weight:900;font-size:14pt;
+  letter-spacing:.03em;text-align:left;}
+.refer ul{list-style:none;margin-top:4.5mm;display:grid;
+  grid-template-columns:1fr 1fr;gap:3mm 8mm;}
+.refer li{font-size:9.6pt;font-weight:500;line-height:1.6;
+  padding-left:6mm;position:relative;text-align:left;}
+.refer li::before{content:"";position:absolute;left:0;top:2mm;
+  width:2.8mm;height:2.8mm;background:var(--green);}
+.refer .note{margin-top:4.5mm;font-size:8.6pt;font-weight:300;
+  color:var(--sub);text-align:left;}
+
+/* 担当医 ── 記事の署名にあたる位置に置く */
+.byline{margin-top:auto;margin-bottom:5mm;padding-top:5mm;border-top:.28mm solid var(--ink);
+  display:flex;gap:8mm;align-items:flex-start;}
+.byline .who{display:grid;grid-template-columns:31.6mm 31.6mm;gap:6mm;flex:none;}
+.byline .who.one{grid-template-columns:31.6mm;}
+.byline .md .sp{white-space:nowrap;}
+.byline .say{flex:1;max-width:112mm;}
+.byline .who.one ~ .say{max-width:134mm;}
+.byline .say .k{font-family:var(--mono);font-size:6.8pt;
+  letter-spacing:.16em;color:var(--faint);}
+.byline .say p{margin-top:3mm;font-family:var(--disp);font-weight:700;
+  font-size:11pt;line-height:1.85;letter-spacing:.02em;text-align:left;}
+.byline .say .by{margin-top:3mm;font-size:7.6pt;font-weight:400;
+  color:var(--sub);letter-spacing:.08em;}
+.byline .say .contact{margin-top:3mm;font-family:var(--mono);font-weight:500;
+  font-size:8.6pt;letter-spacing:.04em;color:var(--green);}
+.byline .say .contact .hrs{margin-left:3mm;font-family:var(--body);
+  font-weight:300;font-size:7.6pt;letter-spacing:.02em;color:var(--sub);}
+
+/* ─────────── P4 下肢班 ─────────── */
+/* 写真＋文字オーバーレイ（表紙のcov-photo/cov-textと同じ考え方を本文ページでも使えるようにした版） */
+.photo-panel{position:relative;margin-top:6mm;overflow:hidden;}
+.photo-panel img{width:100%;height:100%;object-fit:cover;display:block;}
+.photo-panel .scrim{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(0deg,rgba(35,24,21,.80) 0%,rgba(35,24,21,.38) 42%,rgba(35,24,21,0) 72%);}
+.photo-panel .ov{position:absolute;left:8mm;right:8mm;bottom:6mm;color:#FFFFFF;}
+.photo-panel .ov .jlabel{color:#FFFFFF;}
+.photo-panel .ov h3{font-family:var(--disp);font-weight:900;font-size:15pt;
+  line-height:1.4;letter-spacing:.02em;text-align:left;}
+.photo-panel .ov p{margin-top:2mm;font-size:8.4pt;font-weight:300;
+  line-height:1.7;letter-spacing:.02em;max-width:120mm;text-align:left;}
+
+.risks{margin-top:6mm;display:grid;grid-template-columns:1fr 1fr;gap:8mm;}
+.risks .r{padding-left:6mm;border-left:.55mm solid var(--green);}
+.risks .r h4{font-family:var(--disp);font-weight:700;font-size:10pt;
+  letter-spacing:.04em;text-align:left;}
+.risks .r p{margin-top:2mm;font-size:8.6pt;font-weight:300;
+  line-height:1.75;color:var(--sub);text-align:left;}
+
+/* ─────────── P5 医師一覧 ─────────── */
+.chief{display:flex;gap:9mm;align-items:flex-start;margin-top:4mm;}
+.chief .ph{width:46mm;flex:none;}
+.chief .tx{flex:1;padding-top:1mm;}
+.chief .tx .nm{margin-top:4mm;font-family:var(--disp);font-weight:900;
+  font-size:22pt;letter-spacing:.06em;line-height:1.3;text-align:left;}
+.chief .tx .ro{margin-top:2mm;font-size:9pt;font-weight:400;
+  color:var(--green);letter-spacing:.08em;text-align:left;}
+.chief .tx .sp{margin-top:2mm;font-size:8.4pt;font-weight:400;
+  color:var(--sub);letter-spacing:.04em;text-align:left;}
+.chief .tx p{margin-top:4mm;font-size:9pt;font-weight:300;
+  line-height:1.9;color:var(--sub);text-align:left;}
+
+.roster{margin-top:4mm;padding-top:3mm;border-top:.28mm solid var(--ink);
+  display:grid;grid-template-columns:repeat(5,1fr);gap:3.5mm 4mm;margin-bottom:6mm;}
+.roster .md .nm{margin-top:1.5mm;font-size:10.5pt;letter-spacing:.03em;}
+.roster .md .ro{margin-top:.5mm;font-size:7.2pt;}
+.roster .md .sp{margin-top:.3mm;font-size:6.2pt;line-height:1.3;}
+
+.deptline{margin-top:auto;padding-top:6mm;border-top:.28mm solid var(--ink);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:8mm;}
+.deptline .k{font-family:var(--mono);font-size:6.8pt;letter-spacing:.16em;color:var(--faint);}
+.deptline .tel{margin-top:2mm;font-family:var(--disp);font-weight:900;
+  font-size:19pt;letter-spacing:.02em;line-height:1.2;}
+.deptline .tel small{font-family:var(--body);font-weight:400;font-size:8.4pt;
+  letter-spacing:.04em;color:var(--ink);margin-left:4mm;}
+.deptline .rt{font-size:7.6pt;font-weight:300;line-height:1.7;
+  color:var(--sub);text-align:right;}
+
+/* ─────────── P6 ご案内（毎号掲載） ─────────── */
+/* 電話番号を最大の級数に置き、番号から引ける名簿として組む */
+.dir{margin-top:5mm;border-top:.55mm solid var(--ink);}
+.dir .row{display:flex;gap:8mm;align-items:flex-start;
+  padding:3mm 0;border-bottom:.2mm solid var(--rule);}
+.dir .who{width:46mm;flex:none;}
+.dir .who .h{font-family:var(--disp);font-weight:700;font-size:10pt;
+  letter-spacing:.04em;line-height:1.45;text-align:left;}
+.dir .who .s{margin-top:1.5mm;font-size:7.4pt;font-weight:300;
+  line-height:1.6;color:var(--sub);text-align:left;}
+.dir .num{flex:1;}
+.dir .num .n{font-family:var(--disp);font-weight:900;font-size:20pt;
+  letter-spacing:.02em;line-height:1.25;}
+.dir .num .n .lb{font-family:var(--mono);font-weight:500;font-size:.4em;
+  letter-spacing:.16em;color:var(--green);margin-right:2.5mm;
+  vertical-align:.28em;}
+.dir .num .n .sec2{display:block;font-size:.62em;margin-top:1.5mm;color:var(--sub);}
+.dir .num .d{margin-top:2.5mm;font-size:8.2pt;font-weight:300;
+  line-height:1.8;color:var(--sub);text-align:left;}
+
+.ask{margin-top:4mm;background:var(--tint);padding:4mm 7mm 5mm;}
+.ask .h{font-family:var(--disp);font-weight:700;font-size:8.6pt;
+  letter-spacing:.04em;text-align:left;}
+.ask ul{list-style:none;margin-top:3.5mm;display:grid;
+  grid-template-columns:repeat(2,1fr);gap:2mm 8mm;}
+.ask li{font-size:8.6pt;font-weight:400;line-height:1.5;
+  padding-left:5mm;position:relative;text-align:left;}
+.ask li::before{content:"";position:absolute;left:0;top:1.6mm;
+  width:2.2mm;height:2.2mm;background:var(--green);}
+
+.idlink{margin-top:5mm;padding-top:4mm;border-top:.55mm solid var(--ink);}
+.idlink .top{display:flex;gap:9mm;align-items:flex-start;}
+.idlink .top .tx{flex:1;}
+.idlink .top .qr{width:26mm;flex:none;}
+.idlink .top .qr img{width:26mm;height:26mm;display:block;}
+.idlink .top .qr .c{margin-top:2mm;font-size:6.8pt;color:var(--sub);
+  letter-spacing:.04em;text-align:center;}
+.idlink h3{font-family:var(--disp);font-weight:900;font-size:14pt;
+  letter-spacing:.03em;text-align:left;}
+.idlink p{margin-top:3mm;font-size:8.6pt;font-weight:300;
+  line-height:1.75;color:var(--sub);text-align:left;}
+.idlink .view{margin-top:3mm;border-top:.2mm solid var(--rule);padding-top:3mm;}
+.idlink .view .k{font-family:var(--mono);font-size:6.8pt;
+  letter-spacing:.16em;color:var(--faint);}
+.idlink .view .v{margin-top:2.5mm;font-size:8.4pt;font-weight:400;
+  line-height:1.85;text-align:left;}
+
+.colophon{margin-top:auto;padding-top:4mm;border-top:.2mm solid var(--rule);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:8mm;}
+.colophon img{height:17mm;width:auto;flex:none;}
+.colophon .info{font-size:7.4pt;font-weight:300;line-height:1.85;
+  color:var(--sub);text-align:left;}
+.colophon .info strong{display:block;font-family:var(--disp);font-weight:700;
+  font-size:9pt;color:var(--ink);letter-spacing:.06em;margin-bottom:1.5mm;}
+
+/* Web公開用：紙面の見開き幅（216mm≒816px）に満たない画面では縮小して収める */
+@media screen and (max-width:860px){ .sheet{zoom:.62;margin:8mm auto;} }
+@media screen and (max-width:560px){ .sheet{zoom:.42;margin:5mm auto;} }
+
+/* 要確認箇所：画面でのみ黄色く光る。印刷／PDFには出ない */
+.tbd{background:#FFF3B0;box-shadow:0 0 0 .5mm #FFF3B0;}
+@media print{
+  body{background:none;}
+  .sheet{margin:0;box-shadow:none;page-break-after:always;}
+  .sheet:last-child{page-break-after:auto;}
+  .tbd{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ P1 表紙 ══════════ -->
+<section class="sheet" id="cover">
+  <div class="cov-top">
+    <img src="assets/logo-h.png" alt="北海道大学病院">
+    <div class="cov-date">
+      <div class="y">2026.09</div>
+      <div class="j">令和8年9月号</div>
+    </div>
+  </div>
+  <div class="hr" style="margin-top:2mm"></div>
+
+  
+  <img class="masthead-logo" src="assets/NEWSLETTERロゴ-trim.png" alt="NEWSLETTER 北海道大学病院 地域医療連携福祉センター">
+
+  <div class="cov-text">
+    <div class="cov-tag jlabel">整形外科</div>
+    <br>
+    <h1 class="cov-title">国内初の吸収性軟骨再生用材料<br>「モチジェル<span class="reg">&reg;</span>」による軟骨修復治療</h1>
+    <p class="cov-sub">北海道大学病院と持田製薬が共同開発した「モチジェル<span class="reg">&reg;</span>」が、保険診療で使用可能となりました。膝関節・肘関節の軟骨欠損に対する、新たな治療選択肢です。</p>
+  </div>
+
+  <div class="toc">
+    <div class="p-head" style="justify-content:space-between">
+      <span class="jlabel">目次</span>
+      <span class="eyebrow">Contents</span>
+    </div>
+    <div class="toc-grid">
+      <div class="ti"><div class="no">02</div><div class="tt">新しい軟骨再生治療</div></div>
+      <div class="ti"><div class="no">03</div><div class="tt">治療成績・安全性</div></div>
+      <div class="ti"><div class="no">04</div><div class="tt">人工関節置換術</div></div>
+      <div class="ti"><div class="no">05</div><div class="tt">整形外科医師一覧</div></div>
+      <div class="ti"><div class="no">06</div><div class="tt">ご予約・ご案内</div></div>
+    </div>
+  </div>
+
+  <div class="cov-photo">
+    <img src="assets/cover-photo.jpg" alt="公園を走る高齢のご夫婦">
+    <div class="cov-credit">※イメージ写真（生成AIで作成）</div>
+  </div>
+</section>
+
+<!-- ══════════ P2 ══════════ -->
+<section class="sheet" id="p2">
+  <div class="p-head">
+    <span class="jlabel">整形外科</span>
+    <span class="line"></span>
+    <span class="eyebrow">Feature</span>
+  </div>
+
+  <h2 class="sec" style="margin-top:6mm">新しい軟骨再生治療</h2>
+  <p class="lead measure" style="margin-top:5mm">関節軟骨損傷に対する新たな治療選択肢として、国内初の吸収性軟骨再生用材料「モチジェル<span class="reg">&reg;</span>」が保険診療で使用可能となりました。　骨髄刺激法と組み合わせることで、低侵襲に軟骨再生を促進します。</p>
+
+  <div class="feat4">
+    <div class="it"><div class="big">国内初</div><div class="sml">保険適用の吸収性<br>軟骨再生用材料</div></div>
+    <div class="it"><div class="big">細胞を<br>使わない</div><div class="sml">再生医療</div></div>
+    <div class="it"><div class="big">関節鏡下</div><div class="sml">で施行可能</div></div>
+    <div class="it"><div class="big">ドナー採取<br>が不要</div><div class="sml"></div></div>
+  </div>
+
+  <h3 class="sub" style="margin-top:11mm">治療の流れ<span class="en">Procedure</span></h3>
+  <div class="strip">
+    <div>
+      <div class="n">01</div>
+      <img src="assets/step1.jpg" alt="軟骨欠損部の確認・廓清">
+      <h4>欠損部の確認・廓清</h4>
+      <p>軟骨欠損の範囲を確認し、変性した軟骨を廓清します。</p>
+    </div>
+    <div>
+      <div class="n">02</div>
+      <img src="assets/step2.jpg" alt="骨髄刺激（ドリリング）">
+      <h4>骨髄刺激（ドリリング）</h4>
+      <p>軟骨下骨に小孔を作成し、骨髄由来の細胞を欠損部へ動員します。</p>
+    </div>
+    <div>
+      <div class="n">03</div>
+      <img src="assets/step3.jpg" alt="モチジェルの注入・固定">
+      <h4>モチジェル<span class="reg">&reg;</span>注入・固定</h4>
+      <p>欠損部にモチジェル<span class="reg">&reg;</span>を充填・固定し、軟骨再生の場を確保します。</p>
+    </div>
+  </div>
+
+  <h3 class="sub" style="margin-top:10mm">欠損部で起きていること<span class="en">Mechanism</span></h3>
+  <div class="strip cg">
+    <div><img src="assets/cg1.jpg" alt="欠損部へのモチジェル充填"></div>
+    <div><img src="assets/cg2.jpg" alt="ゲルの固定"></div>
+    <div><img src="assets/cg3.jpg" alt="充填が完了した状態"></div>
+  </div>
+  <div class="cap" style="margin-top:3mm">欠損部にゲルを充填し、その場に固定する（イメージ図）</div>
+
+  <div class="foot"><span>02</span><span class="rt">地域連携NEWSLETTER ／ 2026年9月号</span></div>
+</section>
+
+<!-- ══════════ P3 ══════════ -->
+<section class="sheet" id="p3">
+  <div class="p-head">
+    <span class="jlabel">整形外科</span>
+    <span class="line"></span>
+    <span class="eyebrow">Evidence</span>
+  </div>
+
+  <h2 class="sec" style="margin-top:6mm">臨床試験で示された<br>有効性と安全性</h2>
+  <div class="result">
+    <div class="fig">
+      <img src="assets/scope.png" alt="関節鏡で観察した関節軟骨の欠損部">
+    
+    </div>
+    <div>
+      <p class="body">本邦で実施された臨床試験では、膝関節・肘関節の軟骨損傷を対象に、疼痛・機能評価とあわせて、MRIおよび関節鏡による軟骨修復の状態や有害事象の発現状況を評価しました。</p>
+      <br>
+      <div class="cap">関節鏡所見：関節軟骨の欠損部。直視下に欠損の範囲と深さを評価する。</div>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="f">
+      <div class="k">Efficacy</div>
+      <div class="v">有意に改善</div>
+      <div class="d">疼痛・機能評価。MRIおよび関節鏡でも<br>良好な軟骨修復を確認。</div>
+    </div>
+    <div class="f">
+      <div class="k">Safety</div>
+      <div class="v">重篤な有害事象なし</div>
+      <div class="d">モチジェル<span class="reg">&reg;</span>に起因する重篤な<br>有害事象は認められていません。</div>
+    </div>
+  </div>
+
+  <div class="refer">
+    <h3>このような患者さんに最適です</h3>
+    <ul>
+      <li>スポーツ外傷による軟骨損傷</li>
+      <li>離断性骨軟骨炎</li>
+      <li>保存治療で改善しない軟骨欠損</li>
+      <li>変形性関節症へ進行する前に</li>
+    </ul>
+    <p class="note">適応の判断も含めて対応いたしますので、お気軽にご相談ください。</p>
+  </div>
+
+  <div class="byline">
+    <div class="who">
+      <div class="md">
+        <img src="assets/staff/pro-onodera.jpg" alt="小野寺 智洋">
+        <div class="nm">小野寺 智洋</div>
+        <div class="ro">准教授</div>
+        <div class="sp">下肢疾患・足の外科</div>
+      </div>
+      <div class="md">
+        <img src="assets/staff/pro-monma.jpg" alt="門間 太輔">
+        <div class="nm">門間 太輔</div>
+        <div class="ro">准教授</div>
+        <div class="sp">上肢疾患・肩関節外科</div>
+      </div>
+    </div>
+    <div class="say">
+      <br>
+      <div class="k">担当医より</div>
+      <p>軟骨欠損は早期治療が重要です。早い段階でご紹介いただくことで、変形性関節症への進行抑制が期待できます。ぜひ気軽にご相談ください。</p>      <div class="contact">TEL 011-706-5760<span class="hrs">整形外科外来／平日 8:30–17:00</span></div>
+    </div>
+  </div>
+
+  <div class="foot"><span class="rt">地域連携NEWSLETTER ／ 2026年9月号</span><span>03</span></div>
+</section>
+
+<!-- ══════════ P4 下肢班 ══════════ -->
+<section class="sheet" id="p4">
+  <div class="p-head">
+    <span class="jlabel">整形外科 下肢班</span>
+    <span class="line"></span>
+    <span class="eyebrow">Feature</span>
+  </div>
+
+  <h2 class="sec" style="margin-top:6mm">人工関節を、計画どおりの<br>位置に設置する</h2>
+  <p class="lead measure" style="margin-top:5mm">令和7年度より、新たなナビゲーションシステムを導入し、<br>人工関節手術の質の向上を図っています。</p>
+
+  <div class="risks">
+    <div class="r">
+      <h4>人工膝関節置換術</h4>
+      <p>設置位置が不良な場合、術後の痛みや、早期の人工関節のゆるみを引き起こすことがあります。</p>
+    </div>
+    <div class="r">
+      <h4>人工股関節置換術</h4>
+      <p>設置位置が不良な場合、脱臼しやすくなることがあります。</p>
+    </div>
+  </div>
+
+  <div class="tbd" style="margin-top:6mm;padding:4mm;text-align:center;font-size:9pt">［要差し替え］ナビゲーション手術の写真（P4専用・実写を予定）</div>
+  <!-- 写真が届いたら、上のtbdを消して下のphoto-panelに差し替える（見出し・リード文を写真に重ねる場合）
+  <div class="photo-panel" style="height:95mm">
+    <img src="assets/nav-surgery.jpg" alt="ナビゲーションシステムを用いた人工関節手術の様子">
+    <div class="scrim"></div>
+    <div class="ov">
+      <span class="jlabel">整形外科 下肢班</span>
+      <h3>術中にリアルタイムで設置位置を確認</h3>
+      <p>ナビゲーションシステムのモニターで、計画どおりの角度・位置を確認しながら進めます。</p>
+    </div>
+  </div>
+  -->
+
+  <p class="body measure" style="margin-top:6mm">人工関節手術では、正確なインプラントの設置が、<br>手術後の成績を向上させるためにとても重要です。</p>
+
+  <div class="facts n3">
+    <div class="f">
+      <div class="k">Hip / 2025年度</div>
+      <div class="v">157<span class="u">件</span></div>
+      <div class="d">人工股関節置換術</div>
+    </div>
+    <div class="f">
+      <div class="k">Knee / 2025年度</div>
+      <div class="v">68<span class="u">件</span></div>
+      <div class="d">人工膝関節置換術</div>
+    </div>
+    <div class="f">
+      <div class="k">Waiting</div>
+      <div class="v">1–2<span class="u">カ月</span></div>
+      <div class="d">手術枠を増やして対応しており、<br>ご紹介から比較的短期間で対応できます。</div>
+      <br>
+    </div>
+  </div>
+  
+  <div class="byline">
+    <div class="who one">
+      <div class="md">
+        <img src="assets/staff/pro-shimizu.jpg" alt="清水 智弘">
+        <div class="nm">清水 智弘</div>
+        <div class="ro">講師 ／ 外来医長</div>
+        <div class="sp">股関節外科・リウマチ</div>
+      </div>
+    </div>
+    <div class="say">
+      <div class="k">担当医より</div>
+      <p>変形性膝関節症・変形性股関節症で保存治療に限界を感じられた際に、<br>ぜひご連絡下さい。手術の適応判断からご相談いただけます。</p>
+      <div class="contact">TEL 011-706-5760<span class="hrs">整形外科外来／平日 8:30–17:00</span></div>
+      <div class="by">北海道大学病院 整形外科 下肢班</div>
+    </div>
+  </div>
+
+  <div class="foot"><span>04</span><span class="rt">地域連携NEWSLETTER ／ 2026年9月号</span></div>
+</section>
+
+<!-- ══════════ P5 医師一覧 ══════════ -->
+<section class="sheet" id="p5">
+  <div class="p-head">
+    <span class="jlabel">整形外科</span>
+    <span class="line"></span>
+    <span class="eyebrow">Staff</span>
+  </div>
+
+  <div class="chief">
+    <div class="ph md">
+      <img src="assets/staff/pro-iwasaki.jpg" alt="岩崎 倫政">
+    </div>
+    <div class="tx">
+      <h2 class="sec">整形外科 医師一覧</h2>
+      <div class="nm">岩崎 倫政</div>
+      <div class="ro">教授 ／ 整形外科 診療科長</div>
+      <div class="sp">上肢疾患・スポーツ医学</div>
+      <p>脊椎・上肢・下肢・股関節・腫瘍の各領域に専門医を配置し、運動器疾患を横断的に診療しています。ご紹介の際に、担当医をご指定いただくこともできます。</p>
+    </div>
+  </div>
+
+  <div class="roster">
+    <div class="md"><img src="assets/staff/pro-kondoh.jpg" alt="近藤 英司"><div class="nm">近藤 英司</div><div class="ro">教授</div><div class="sp">下肢疾患・スポーツ医学</div></div>
+    <div class="md"><img src="assets/staff/pro-sudou.jpg" alt="須藤 英毅"><div class="nm">須藤 英毅</div><div class="ro">特任教授</div><div class="sp">脊椎脊髄外科・脊柱変形</div></div>
+    <div class="md"><img src="assets/staff/pro-matsui.jpg" alt="松井 雄一郎"><div class="nm">松井 雄一郎</div><div class="ro">准教授</div><div class="sp">上肢疾患</div></div>
+    <div class="md"><img src="assets/staff/pro-kadoya.jpg" alt="角家 健"><div class="nm">角家 健</div><div class="ro">特任准教授</div></div>
+    <div class="md"><img src="assets/staff/pro-takahshi-daisuke.jpg" alt="髙橋 大介"><div class="nm">髙橋 大介</div><div class="ro">講師</div><div class="sp">股関節外科</div></div>
+    <div class="md"><img src="assets/staff/pro-yamada.jpg" alt="山田 勝久"><div class="nm">山田 勝久</div><div class="ro">講師</div><div class="sp">脊椎脊髄外科・脊柱変形</div></div>
+    <div class="md"><img src="assets/staff/pro-matsuoka.jpg" alt="松岡 正剛"><div class="nm">松岡 正剛</div><div class="ro">講師</div><div class="sp">下肢疾患・骨軟部腫瘍</div></div>
+    <div class="md"><img src="assets/staff/pro-endoh-tsutomu.jpg" alt="遠藤 努"><div class="nm">遠藤 努</div><div class="ro">特任講師</div><div class="sp">脊椎脊髄外科</div></div>
+    <div class="md"><img src="assets/staff/pro-terukawa.jpg" alt="照川 アラー"><div class="nm">照川 アラー</div><div class="ro">助教</div></div>
+    <div class="md"><img src="assets/staff/pro-endoh-takeshi.jpg" alt="遠藤 健"><div class="nm">遠藤 健</div><div class="ro">助教</div><div class="sp">上肢疾患</div></div>
+    <div class="md"><img src="assets/staff/pro-ohnishi.jpg" alt="大西 貴士"><div class="nm">大西 貴士</div><div class="ro">助教</div><div class="sp">脊椎脊髄外科・脊柱変形</div></div>
+    <div class="md"><img src="assets/staff/pro-ukeba.jpg" alt="筌場 大介"><div class="nm">筌場 大介</div><div class="ro">助教</div><div class="sp">脊椎脊髄疾患</div></div>
+    <div class="md"><img src="assets/staff/pro-satoh-dai.jpg" alt="佐藤 大"><div class="nm">佐藤 大</div><div class="ro">特任助教</div><div class="sp">下肢疾患</div></div>
+    <div class="md"><img src="assets/staff/pro-homan-k.jpg" alt="宝満 健太郎"><div class="nm">宝満 健太郎</div><div class="ro">特任助教</div></div>
+  </div>
+
+  <div class="deptline">
+    <div>
+      <div class="k">診療・治療に関するお問い合わせ</div>
+      <div class="tel">011-706-5760<small>整形外科外来／平日 8:30–17:00</small></div>
+    </div>
+    <div class="rt">小野寺 智洋 准教授・門間 太輔 准教授は3ページ、<br>清水 智弘 講師は4ページに掲載しています。</div>
+  </div>
+
+  <div class="foot"><span class="rt">地域連携NEWSLETTER ／ 2026年9月号</span><span>05</span></div>
+</section>
+
+<!-- ══════════ P6 ご案内（毎号掲載） ══════════ -->
+<section class="sheet" id="p6">
+  <div class="p-head">
+    <span class="jlabel">ご案内</span>
+    <span class="line"></span>
+    <span class="eyebrow">Information</span>
+  </div>
+
+  <h2 class="sec" style="margin-top:6mm">予約方法のご案内</h2>
+
+  <div class="dir">
+    <div class="row">
+      <div class="who">
+        <div class="h">医療機関からの<br>紹介予約について</div>
+        <div class="s">医事課 新来予約受付担当・紹介予約</div>
+      </div>
+      <div class="num">
+        <div class="n"><span class="lb">FAX</span>011-706-7963<span class="sec2"><span class="lb">TEL</span>011-706-6037</span></div>
+        <div class="d">患者さんを北大病院へ紹介いただく場合は、FAXにてお申し込みください。<br>
+          受付曜日：月〜金／受付時間：8時30分〜17時00分（16時30分以降の受付は翌日対応になります）<br>
+          ※翌日の予約は15時00分までにお申し込みください。</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="who">
+        <div class="h">患者さんからの<br>予約申込み方法</div>
+        <div class="s">予約受付専用窓口</div>
+      </div>
+      <div class="num">
+        <div class="n"><span class="lb">TEL</span>011-706-7733</div>
+        <div class="d">予約受付時間：平日 9時00分〜16時00分（翌日の予約受付は15時00分まで）</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="who">
+        <div class="h">精神科神経科・<br>リハビリテーション科</div>
+        <div class="s">北海道大学病院 代表</div>
+      </div>
+      <div class="num">
+        <div class="n"><span class="lb">TEL</span>011-716-1161</div>
+        <div class="d">精神科神経科の受診をご希望の場合は、代表にお電話をお掛けください。<br>
+          リハビリテーション科の受診をご希望の場合は、代表にお電話をお掛けいただき「リハビリテーション科受診予約希望」の旨をお伝えください。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ask">
+    <div class="h">電話予約の際は、以下の内容を確認させていただきます</div>
+    <ul>
+      <li>氏名</li>
+      <li>受診希望の診療科</li>
+      <li>性別</li>
+      <li>北大病院の受診</li>
+      <li>生年月日</li>
+      <li>紹介元医療機関</li>
+      <li>連絡先（住所・電話番号）</li>
+      <li>紹介状に記載の宛名</li>
+    </ul>
+  </div>
+
+  <div class="idlink">
+    <div class="top">
+      <div class="tx">
+        <h3>ID-Linkによる診療情報共有サービス（ICT連携）のご案内</h3>
+        <p>当院では、患者さんの診療情報を共有する地域医療連携ネットワークサービス「ID-Link」を導入しております。地域の医療機関の皆さまへの情報提供を開始いたしましたので、お知らせします。また、ID-Linkを通じた情報共有を推進しており、連携機関の拡充を図っております。</p>
+        <p>当院へご紹介いただいております患者さんの診療情報の参照を希望される場合は、右の申請フォームよりご申請くださいますよう、お願い申し上げます。なお、詳細につきましては、当院地域医療連携福祉センターのHPよりご確認ください。</p>
+      </div>
+      <div class="qr">
+        <img src="assets/qr-idlink.png" alt="ID-Link参照申請フォームのQRコード">
+        <div class="c">申請はこちらから</div>
+      </div>
+    </div>
+    <div class="view">
+      <div class="k">閲覧可能な情報</div>
+      <div class="v">入退院情報・処方・注射・検体検査・DICOM画像・放射線検査オーダ・生理検査・食事・内視鏡検査・退院時要約・簡易サマリ（病名・アレルギー）・身長、体重、血液型</div>
+    </div>
+  </div>
+
+  <div class="colophon">
+    <img src="assets/logo-v.png" alt="北海道大学病院">
+    <div class="info">
+      <strong>北海道大学病院 地域医療連携福祉センター</strong>
+      〒060-8648 札幌市北区北14条西5丁目　TEL 011-706-7943／FAX 011-706-7945<br>
+      https://www.huhp.hokudai.ac.jp/relation/　発行：2026年9月
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
