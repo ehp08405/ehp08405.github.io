@@ -119,9 +119,12 @@ h1.cov-title{font-family:var(--disp);font-weight:900;
 .toc-list .tt{margin-top:.4em;font-family:var(--disp);font-weight:700;
   font-size:.78rem;line-height:1.4;letter-spacing:.01em;}
 
-/* ─────────── 記事セクション（紙面のページに相当。区切りは罫線のみ） ─────────── */
-.artsec{margin-top:4.4rem;padding-top:2rem;border-top:1px solid var(--rule);
+/* ─────────── 記事セクション（紙面のページに相当。区切りは太い罫線＋大きい余白） ─────────── */
+.artsec{margin-top:7.5rem;padding-top:2.6rem;border-top:2px solid var(--ink);
   scroll-margin-top:1.2rem;}
+@media (max-width:520px){
+  .artsec{margin-top:5rem;padding-top:2rem;}
+}
 
 .feat4{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
   gap:1.4rem;margin-top:2.2rem;}
