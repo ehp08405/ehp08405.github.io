@@ -119,11 +119,14 @@ h1.cov-title{font-family:var(--disp);font-weight:900;
 .toc-list .tt{margin-top:.4em;font-family:var(--disp);font-weight:700;
   font-size:.78rem;line-height:1.4;letter-spacing:.01em;}
 
-/* ─────────── 記事セクション（紙面のページに相当。区切りは太い罫線＋大きい余白） ─────────── */
-.artsec{margin-top:7.5rem;padding-top:2.6rem;border-top:2px solid var(--ink);
-  scroll-margin-top:1.2rem;}
+/* ─────────── 記事セクション（紙面のページに相当）
+   罫線1本ではなく、地色の帯（フルブリード）で区切る。帯の先頭には
+   紙面と共通の緑罫（.feat4/.facts等に使う「起点」の合図）を置く。 ─────────── */
+.artsec{background:var(--paper);border-top:3px solid var(--green);
+  padding:4.2rem 0 4.6rem;scroll-margin-top:1rem;}
+.artsec.tint{background:var(--tint);}
 @media (max-width:520px){
-  .artsec{margin-top:5rem;padding-top:2rem;}
+  .artsec{padding:2.8rem 0 3.2rem;}
 }
 
 .feat4{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
@@ -264,7 +267,8 @@ h1.cov-title{font-family:var(--disp);font-weight:900;
 .idlink .view .k{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--faint);}
 .idlink .view .v{margin-top:.6em;font-size:.86rem;font-weight:400;line-height:1.85;}
 
-.colophon{margin-top:3rem;padding:2rem 0 3rem;border-top:.5px solid var(--rule);
+.colophon{border-top:.5px solid var(--rule);}
+.colophon .wrap{padding-top:2rem;padding-bottom:3rem;
   display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.4rem;}
 .colophon img{height:44px;width:auto;flex:none;}
 .colophon .info{font-size:.8rem;font-weight:300;line-height:1.85;color:var(--sub);}
@@ -293,37 +297,42 @@ h1.cov-title{font-family:var(--disp);font-weight:900;
   <img src="assets/NEWSLETTERロゴ-trim.png" alt="NEWSLETTER 北海道大学病院 地域医療連携福祉センター">
 </div>
 
-<main class="wrap">
+<main>
 
   <!-- ══════════ ヒーロー ══════════ -->
   <section class="hero">
-    <div class="tag jlabel">整形外科</div>
-    <h1 class="cov-title">国内初の吸収性軟骨再生用材料<br>「モチジェル<span class="reg">&reg;</span>」による軟骨修復治療</h1>
-    <p class="cov-sub">北海道大学病院と持田製薬が共同開発した「モチジェル<span class="reg">&reg;</span>」が、保険診療で使用可能となりました。膝関節・肘関節の軟骨欠損に対する、新たな治療選択肢です。</p>
+    <div class="wrap">
+      <div class="tag jlabel">整形外科</div>
+      <h1 class="cov-title">国内初の吸収性軟骨再生用材料<br>「モチジェル<span class="reg">&reg;</span>」による軟骨修復治療</h1>
+      <p class="cov-sub">北海道大学病院と持田製薬が共同開発した「モチジェル<span class="reg">&reg;</span>」が、保険診療で使用可能となりました。膝関節・肘関節の軟骨欠損に対する、新たな治療選択肢です。</p>
 
-    <div class="hero-photo">
-      <img src="assets/cover-photo.jpg" alt="公園を走る高齢のご夫婦">
-      <div class="credit">※イメージ写真（生成AIで作成）</div>
+      <div class="hero-photo">
+        <img src="assets/cover-photo.jpg" alt="公園を走る高齢のご夫婦">
+        <div class="credit">※イメージ写真（生成AIで作成）</div>
+      </div>
     </div>
   </section>
 
   <!-- ══════════ この号の内容 ══════════ -->
   <nav class="toc" aria-label="この号の内容">
-    <div class="p-head" style="justify-content:space-between">
-      <span class="jlabel">この号の内容</span>
-      <span class="eyebrow">Contents</span>
+    <div class="wrap">
+      <div class="p-head" style="justify-content:space-between">
+        <span class="jlabel">この号の内容</span>
+        <span class="eyebrow">Contents</span>
+      </div>
+      <ul class="toc-list">
+        <li><a href="#p2"><span class="no">01</span><span class="tt">新しい軟骨再生治療</span></a></li>
+        <li><a href="#p3"><span class="no">02</span><span class="tt">治療成績・安全性</span></a></li>
+        <li><a href="#p4"><span class="no">03</span><span class="tt">人工関節置換術</span></a></li>
+        <li><a href="#p5"><span class="no">04</span><span class="tt">整形外科医師一覧</span></a></li>
+        <li><a href="#p6"><span class="no">05</span><span class="tt">ご予約・ご案内</span></a></li>
+      </ul>
     </div>
-    <ul class="toc-list">
-      <li><a href="#p2"><span class="no">01</span><span class="tt">新しい軟骨再生治療</span></a></li>
-      <li><a href="#p3"><span class="no">02</span><span class="tt">治療成績・安全性</span></a></li>
-      <li><a href="#p4"><span class="no">03</span><span class="tt">人工関節置換術</span></a></li>
-      <li><a href="#p5"><span class="no">04</span><span class="tt">整形外科医師一覧</span></a></li>
-      <li><a href="#p6"><span class="no">05</span><span class="tt">ご予約・ご案内</span></a></li>
-    </ul>
   </nav>
 
   <!-- ══════════ 01 モチジェル：治療の流れ ══════════ -->
-  <section class="artsec" id="p2">
+  <section class="artsec tint" id="p2">
+   <div class="wrap">
     <div class="p-head">
       <span class="jlabel">整形外科</span>
       <span class="line"></span>
@@ -370,10 +379,12 @@ h1.cov-title{font-family:var(--disp);font-weight:900;
       <div><img src="assets/cg3.jpg" alt="充填が完了した状態"></div>
     </div>
     <div class="cap">欠損部にゲルを充填し、その場に固定する（イメージ図）</div>
+   </div>
   </section>
 
   <!-- ══════════ 02 モチジェル：治療成績・安全性 ══════════ -->
   <section class="artsec" id="p3">
+   <div class="wrap">
     <div class="p-head">
       <span class="jlabel">整形外科</span>
       <span class="line"></span>
@@ -437,10 +448,12 @@ h1.cov-title{font-family:var(--disp);font-weight:900;
         <div class="contact">TEL 011-706-5760<span class="hrs">整形外科外来／平日 8:30–17:00</span></div>
       </div>
     </div>
+   </div>
   </section>
 
   <!-- ══════════ 03 下肢班：人工関節 ══════════ -->
-  <section class="artsec" id="p4">
+  <section class="artsec tint" id="p4">
+   <div class="wrap">
     <div class="p-head">
       <span class="jlabel">整形外科 下肢班</span>
       <span class="line"></span>
@@ -498,10 +511,12 @@ h1.cov-title{font-family:var(--disp);font-weight:900;
         <div class="by">北海道大学病院 整形外科 下肢班</div>
       </div>
     </div>
+   </div>
   </section>
 
   <!-- ══════════ 04 医師一覧 ══════════ -->
   <section class="artsec" id="p5">
+   <div class="wrap">
     <div class="p-head">
       <span class="jlabel">整形外科</span>
       <span class="line"></span>
@@ -546,10 +561,12 @@ h1.cov-title{font-family:var(--disp);font-weight:900;
       </div>
       <div class="rt">小野寺 智洋 准教授・門間 太輔 准教授は「治療成績・安全性」、<br>清水 智弘 講師は「人工関節置換術」に掲載しています。</div>
     </div>
+   </div>
   </section>
 
   <!-- ══════════ 05 ご案内 ══════════ -->
-  <section class="artsec" id="p6">
+  <section class="artsec tint" id="p6">
+   <div class="wrap">
     <div class="p-head">
       <span class="jlabel">ご案内</span>
       <span class="line"></span>
@@ -628,16 +645,19 @@ h1.cov-title{font-family:var(--disp);font-weight:900;
         <div class="v">入退院情報・処方・注射・検体検査・DICOM画像・放射線検査オーダ・生理検査・食事・内視鏡検査・退院時要約・簡易サマリ（病名・アレルギー）・身長、体重、血液型</div>
       </div>
     </div>
+   </div>
   </section>
 
 </main>
 
-<footer class="wrap colophon">
-  <img src="assets/logo-v.png" alt="北海道大学病院">
-  <div class="info">
-    <strong>北海道大学病院 地域医療連携福祉センター</strong>
-    〒060-8648 札幌市北区北14条西5丁目　TEL 011-706-7943／FAX 011-706-7945<br>
-    https://www.huhp.hokudai.ac.jp/relation/　発行：2026年9月
+<footer class="colophon">
+  <div class="wrap">
+    <img src="assets/logo-v.png" alt="北海道大学病院">
+    <div class="info">
+      <strong>北海道大学病院 地域医療連携福祉センター</strong>
+      〒060-8648 札幌市北区北14条西5丁目　TEL 011-706-7943／FAX 011-706-7945<br>
+      https://www.huhp.hokudai.ac.jp/relation/　発行：2026年9月
+    </div>
   </div>
 </footer>
 
